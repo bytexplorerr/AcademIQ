@@ -14,7 +14,7 @@ certificateRouter.get("/fetch/:certificateID",async (req,res)=>{
             return res.status(404).json({success:false,message:'Certificate Not Found'});
         }
 
-        certificate = {...certificate.toObject(),certificate_url:`${process.env.CLIENT_URL}/${certificate._id}`};
+        certificate = {...certificate.toObject(),certificate_url:`${process.env.CLIENT_URL}/certificate/${certificate._id}`};
 
         return res.status(200).json({success:true,certificate});
 

@@ -49,7 +49,7 @@ const App = () => {
         <Route path="/forgot-password" element={<AuthenticatedUser><ForgotPassword /></AuthenticatedUser>} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/course-details/:courseID" element={<ProtectedRoute><CourseDetails /></ProtectedRoute>} />
-        <Route path="/course-progress/:courseID" element={<ProtectedRoute><PurchasedCourseRoute><CourseProgress /></PurchasedCourseRoute></ProtectedRoute>} />
+        <Route path="/course-progress/:courseID" element={<ProtectedRoute><CourseProgress /></ProtectedRoute>} />
         <Route path="/certificate/:certificateID" element={<Certificate />} />
         <Route path="/my-learning" element={<ProtectedRoute><MyLearning /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />

@@ -145,7 +145,7 @@ const AdminEditCourse = () => {
   const handleUpdate = async () => {
     try {
       const formData = new FormData();
-      formData.append("id", course?._id);
+      formData.append("id", course._id);
       formData.append("title", course?.title);
       formData.append("subTitle", course?.subTitle);
       formData.append("description", course?.description);

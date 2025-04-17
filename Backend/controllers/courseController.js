@@ -104,6 +104,7 @@ export const EditCourse = async (req, res) => {
       .status(200)
       .json({ success: true, message: "Course updated successfully!" });
   } catch (err) {
+    console.log(err);
     return res
       .status(500)
       .json({ success: false, message: "Internal server error!" });

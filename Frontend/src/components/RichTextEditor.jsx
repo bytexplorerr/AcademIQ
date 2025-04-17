@@ -41,8 +41,6 @@ const RichTextEditor = ({ course, setCourse }) => {
 
   let { theme } = useTheme();
 
-  console.log(theme);
-
   if (!theme) {
     const isDarkMode = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -82,7 +80,7 @@ const RichTextEditor = ({ course, setCourse }) => {
       onChange={(newValue) => {
         setValue(newValue);
         const plainText = newValue.map((n) => Node.string(n)).join("\n");
-        setCourse({ ...course, description: plainText });
+        setCourse(prev =>({ ...prev, description: plainText }));
       }}
     >
       <div style={styles.toolbar(theme)}>
