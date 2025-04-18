@@ -36,6 +36,8 @@
 - Postman for API testing
 - VS Code for development
 
+---
+
 ## ⚙️ Tech Stack
 
 ### 🧩 Backend
