@@ -3,11 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import React, { useEffect, useState } from "react";
-import { useLocation, useOutletContext } from "react-router-dom";
+import { useLocation, useNavigate, useOutletContext } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const SearchPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { setQuery, query, selectedCategories, sortByPrice } =
     useOutletContext();
   const [courses, setCourses] = useState([]);
@@ -46,8 +47,8 @@ const SearchPage = () => {
         </div>
       ) : (
         <main className='space-y-6'>
-          {courses.map((course) => (
-            <Card key={course._id}>
+          {courses?.length > 0 ? courses.map((course) => (
+            <Card key={course._id} className='cursor-pointer transform hover:scale-105 transition-all duration-300' onClick={()=>navigate(`/course-details/${course._id}`)}>
               <CardContent className="flex flex-col items-center sm:flex-row gap-4">
                 <div>
                   <img
@@ -66,7 +67,7 @@ const SearchPage = () => {
                         {course?.creator?.name}
                       </span>
                     </p>
-                    <Badge className="bg-[#F90070] capitalize">
+                    <Badge className="bg-[#F90070] capitalize text-white">
                       {course?.level || 'Beginner'}
                     </Badge>
                   </div>
@@ -76,7 +77,7 @@ const SearchPage = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
+          )) : <p className="text-center">No Course Found.</p>}
         </main>
       )}
     </section>

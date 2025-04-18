@@ -4,6 +4,7 @@ import { deleteMedia, uploadMedia } from "../utils/cloudinary.js";
 import courseProgressModel from "../models/courseProgressModel.js";
 import purchaseCourseModel from "../models/purchaseCourseModel.js";
 import certificateModel from "../models/certificateModel.js";
+import lectureModel from "../models/lectureModel.js";
 
 export const createCourse = async (req, res) => {
   try {
@@ -161,6 +162,7 @@ export const RemoveCourse = async (req, res) => {
       .status(200)
       .json({ success: true, message: "Course Deleted Successfully!" });
   } catch (err) {
+    console.log(err);
     return res
       .status(500)
       .json({ success: false, message: "Internal server error!" });

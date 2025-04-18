@@ -94,7 +94,7 @@ const CourseDetails = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl">Course Content</CardTitle>
-                  <CardDescription>4 lectures</CardDescription>
+                  <CardDescription>{course?.lectures?.length} lectures</CardDescription>
                 </CardHeader>
                 <CardContent>
                   {course?.lectures?.map((lecture) => (

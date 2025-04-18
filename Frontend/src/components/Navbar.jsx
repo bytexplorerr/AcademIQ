@@ -106,6 +106,8 @@ const Profile = ({user})=>{
 
 const Explore = ({courses})=>{
 
+  const navigate = useNavigate();
+
     return (
     <DropdownMenu className='border-0 bg-transparent'>
       <DropdownMenuTrigger asChild className='cursor-pointer border-0 hover:border-0 font-medium'>
@@ -119,7 +121,7 @@ const Explore = ({courses})=>{
               <DropdownMenuPortal className='border-0 hover:border-0'>
                 <DropdownMenuSubContent className='ml-4 text-center w-40 bg-[#ffffff] dark:bg-gray-800 border-1 z-10 shadow-sm rounded-md *:cursor-pointer *:hover:text-[#F90070]'>
                   {item.areas.map((area,index)=>(
-                    <DropdownMenuItem key={index} className='p-2'>{area}</DropdownMenuItem>
+                    <DropdownMenuItem key={index} className='p-2' onClick={()=>navigate('/explore/search',{state:{query:area}})}>{area}</DropdownMenuItem>
                   ))}
                 </DropdownMenuSubContent>
               </DropdownMenuPortal>
@@ -183,7 +185,7 @@ const MobileNav = ({user,courses})=>{
               </PopoverTrigger>
               <PopoverContent align="start" className="w-56 p-2 bg-white dark:bg-gray-800 border rounded-lg shadow-md">
                 {item.areas.map((sub, idx) => (
-                  <div key={idx} className="p-2 hover:bg-gray-100 rounded cursor-pointer text-sm hover:text-[#F90070]">
+                  <div key={idx} className="p-2 hover:bg-gray-100 rounded cursor-pointer text-sm hover:text-[#F90070]" onClick={()=>navigate('/explore/search',{state:{query:sub}})}>
                     {sub}
                   </div>
                 ))}
