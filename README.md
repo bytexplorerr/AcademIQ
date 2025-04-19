@@ -115,8 +115,9 @@ academiq/
 
 ### Clone the repository
 ```bash
-git clone https://github.com/bytexplorerr/Rydr.git
-cd Rydr
+git clone https://github.com/bytexplorerr/AcademIQ.git
+cd AcademIQ
+```
 
 ### 🔧 Backend Setup
 
