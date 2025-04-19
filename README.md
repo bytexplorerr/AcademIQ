@@ -113,6 +113,11 @@ academiq/
 
 ## 🛠️ Installation
 
+### Clone the repository
+```bash
+git clone https://github.com/bytexplorerr/Rydr.git
+cd Rydr
+
 ### 🔧 Backend Setup
 
 ```bash
